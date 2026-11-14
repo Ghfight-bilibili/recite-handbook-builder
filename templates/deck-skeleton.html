@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>行政复议 · 背诵手册（示例）</title>
+<style>
+:root{
+  --paper:#f6f1e7;--card:#fffdf8;--ink:#26221c;--ink2:#4b4439;--muted:#877d6d;
+  --line:#e4dac8;--line2:#d6c8b1;--accent:#0f6b5c;--accent2:#ad4932;
+  --gold:#a27a33;--goldbg:#f7efdd;--shadow:0 8px 26px rgba(52,40,22,.06);
+}
+html.dark{
+  --paper:#13110e;--card:#1c1915;--ink:#e9e2d5;--ink2:#cdc4b5;--muted:#9b9181;
+  --line:#332e27;--line2:#443d33;--accent:#62c0ae;--accent2:#dd8a70;
+  --gold:#d1a85e;--goldbg:#2d2719;--shadow:0 10px 30px rgba(0,0,0,.35);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font:15px/1.7 system-ui,-apple-system,"PingFang SC","Noto Sans CJK SC","Microsoft YaHei",sans-serif}
+button{font:inherit;color:inherit}
+.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;
+  gap:12px;padding:10px 18px;background:color-mix(in srgb,var(--paper) 92%,transparent);
+  border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+.bar h1{font-size:15px;margin:0;letter-spacing:.04em}
+.tools{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.seg{display:flex;gap:2px;padding:3px;background:var(--card);border:1px solid var(--line);border-radius:999px}
+.seg button{border:0;background:transparent;border-radius:999px;padding:5px 10px;font-size:11.5px;
+  color:var(--muted);cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--goldbg);color:var(--ink);font-weight:600}
+.icon{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:5px 9px;
+  font-size:11px;color:var(--muted);cursor:pointer}
+.count{font-size:11px;color:var(--muted);min-width:66px;text-align:right}
+.wrap{max-width:1200px;margin:0 auto;padding:24px 18px 80px}
+.head{padding:22px 0 12px;border-bottom:1px solid var(--line);margin-bottom:18px}
+.head h2{font-family:"Noto Serif CJK SC","Songti SC",serif;font-size:30px;margin:0 0 6px}
+.head p{margin:0;color:var(--muted);font-size:12.5px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+.card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--accent);
+  border-radius:13px;padding:16px 18px 14px;box-shadow:var(--shadow);scroll-margin-top:70px}
+.card-head{display:flex;gap:10px;align-items:flex-start}
+.num{font-family:"Noto Serif CJK SC","Songti SC",serif;font-size:26px;line-height:1;color:var(--accent);opacity:.55}
+.titles{flex:1;min-width:0}
+.titles h3{font-size:16px;margin:0;line-height:1.4}
+.ess{font-size:12px;color:var(--muted);margin:3px 0 0}
+.expand{border:1px solid var(--line);background:transparent;border-radius:6px;width:26px;height:24px;
+  font-size:11px;color:var(--muted);cursor:pointer;flex:none}
+.full{font-family:"Noto Serif CJK SC","Songti SC",serif;font-size:14.5px;line-height:1.95;
+  text-align:justify;margin-top:10px}
+.full p{margin:0 0 8px}
+.full b{font-weight:600;color:var(--accent);background:linear-gradient(transparent 61%,#e4f0eb 61%)}
+html.dark .full b{background:linear-gradient(transparent 61%,#1e3a33 61%);color:#9ed9ca}
+.part-mark{display:flex;align-items:center;gap:7px;margin:12px 0 4px;font-size:10px;letter-spacing:.14em;
+  color:var(--gold);font-weight:700;font-family:system-ui,sans-serif}
+.part-mark::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+.note{border-left:3px solid var(--accent2);background:#fbefe9;color:#6c3a29;border-radius:8px;
+  padding:8px 10px;margin-top:10px;font-size:11.5px;line-height:1.7}
+html.dark .note{background:#2e1f1a;color:#e2b3a1}
+.kw{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.kw span{font-size:10.5px;border:1px solid var(--line);background:var(--paper);border-radius:999px;
+  padding:1px 7px;color:var(--muted)}
+.exams{margin-top:8px;border-top:1px dashed var(--line);padding-top:6px}
+.exams details{font-size:11.5px;border-bottom:1px solid var(--line);padding:4px 0}
+.exams summary{cursor:pointer;list-style:none}
+.exams summary::after{content:"+";float:right;color:var(--muted)}
+.exams details[open] summary::after{content:"−"}
+.exams .ans{background:var(--paper);border-radius:7px;padding:7px 9px;margin-top:4px;color:var(--ink2)}
+.keys-view{display:none;margin-top:10px}
+.kpart{border:1px solid var(--line);border-radius:8px;padding:7px 9px;margin-bottom:7px;background:var(--paper)}
+.kpart-h{font-size:9px;letter-spacing:.12em;color:var(--gold);font-weight:700;margin-bottom:5px}
+.kchips{display:flex;flex-wrap:wrap;gap:5px}
+.kchip{border:1px solid var(--line);background:var(--card);border-radius:6px;padding:3px 8px;
+  font-size:11.5px;cursor:pointer;filter:blur(5px);opacity:.55;transition:.3s}
+.kchip.revealed{filter:none;opacity:1;background:var(--goldbg)}
+body.brief .full,body.brief .note,body.brief .exams{display:none}
+body.brief .cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+body.keys .full,body.keys .note,body.keys .exams{display:none}
+body.keys .keys-view{display:block}
+body.blank .note,body.blank .exams{display:none}
+body.blank .full b{color:transparent;background:var(--line2);border-radius:3px;cursor:pointer}
+body.blank .full b.revealed{color:var(--accent);background:linear-gradient(transparent 61%,#e4f0eb 61%)}
+body.quiz .full,body.quiz .keys-view,body.quiz .note,body.quiz .exams{display:none}
+body.quiz .card:not(.revealed) .ess{display:none}
+body.quiz .card.revealed .full{display:block}
+body.quiz .card{cursor:pointer}
+body.quiz .card::after{content:"点击展开";float:right;font-size:9px;color:var(--muted)}
+@media(max-width:820px){
+  .cards,body.brief .cards{grid-template-columns:1fr}
+  .bar{align-items:flex-start;flex-direction:column}
+  .head h2{font-size:25px}
+}
+/* 全屏阅读器 */
+.reader{position:fixed;inset:0;z-index:80;display:flex;align-items:center;justify-content:center;
+  padding:2vh 2vw;background:rgba(25,20,12,.55);backdrop-filter:blur(6px)}
+.reader[hidden]{display:none}
+.reader-shell{width:min(900px,100%);height:min(92vh,900px);background:var(--card);border:1px solid var(--line);
+  border-radius:16px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.reader-head{display:flex;justify-content:space-between;gap:12px;padding:13px 18px;border-bottom:1px solid var(--line)}
+.reader-head h2{font-size:16px;margin:0}
+.reader-tools{display:flex;gap:6px;align-items:center}
+.reader-tools button{border:1px solid var(--line);background:var(--card);border-radius:7px;
+  padding:5px 8px;font-size:10.5px;cursor:pointer}
+.reader-scroll{overflow:auto;padding:26px 32px 40px;font-family:"Noto Serif CJK SC","Songti SC",serif;
+  font-size:var(--fs,18px);line-height:2;text-align:justify}
+.reader-scroll .part-mark{font-family:system-ui,sans-serif}
+body.fs .reader{padding:0}
+body.fs .reader-shell{width:100%;height:100dvh;border-radius:0;border:0}
+</style>
+</head>
+<body>
+<header class="bar">
+  <h1>行政复议 · 背诵手册</h1>
+  <div class="tools">
+    <span class="count" id="count"></span>
+    <div class="seg" role="group" aria-label="模式">
+      <button data-mode="read" aria-pressed="true">精读</button>
+      <button data-mode="brief" aria-pressed="false">速记</button>
+      <button data-mode="blank" aria-pressed="false">挖空</button>
+      <button data-mode="keys" aria-pressed="false">关键词</button>
+      <button data-mode="quiz" aria-pressed="false">自测</button>
+    </div>
+    <button class="icon" id="theme" type="button">暗色</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="head">
+    <h2>行政复议</h2>
+    <p>示例骨架：卡片、三段、批注、关键词、五种模式、暗色、全屏阅读。复制后换内容。</p>
+  </div>
+  <div class="cards">
+    <article class="card" id="c01">
+      <div class="card-head">
+        <div class="num">01</div>
+        <div class="titles"><h3>行政复议的申请期限</h3><p class="ess">知道或应当知道行政行为之日起六十日内提出。</p></div>
+        <button class="expand" data-card="c01" type="button">⛶</button>
+      </div>
+      <div class="full">
+        <span class="part-mark">① 含义</span>
+        <p>公民、法人或者其他组织认为行政行为侵犯其合法权益的，可以自知道或者应当知道该行政行为之日起<b>六十日</b>内提出行政复议申请；但是法律规定的申请期限超过六十日的除外。</p>
+        <span class="part-mark">② 特征</span>
+        <p>因不可抗力或者其他正当理由耽误法定申请期限的，申请期限自障碍消除之日起继续计算。未告知申请行政复议的权利、行政复议机关和申请期限的，申请期限自知道或者应当知道上述内容之日起计算，但是最长不得超过<b>一年</b>。</p>
+        <span class="part-mark">③ 方法论</span>
+        <p>先写起算点，再写六十日，最后写例外：法律另有规定、不可抗力、未告知救济权利。</p>
+      </div>
+      <div class="keys-view">
+        <div class="kpart"><div class="kpart-h">① 含义</div><div class="kchips"><button class="kchip">六十日</button></div></div>
+        <div class="kpart"><div class="kpart-h">② 特征</div><div class="kchips"><button class="kchip">一年</button><button class="kchip">障碍消除</button></div></div>
+        <div class="kpart"><div class="kpart-h">③ 方法论</div><div class="kchips"><button class="kchip">起算点</button><button class="kchip">例外</button></div></div>
+      </div>
+      <div class="note">红笔批注：起算点是“知道或应当知道”，不是“作出之日”。</div>
+      <div class="kw"><span>知道或应当知道</span><span>六十日</span><span>一年</span><span>不可抗力</span></div>
+      <div class="exams"><details><summary>2023 · 37(1) 申请期限如何起算</summary><div class="ans">先点起算点，再写六十日，最后写未告知救济权利的最长一年。</div></details></div>
+    </article>
+
+    <article class="card" id="c02">
+      <div class="card-head">
+        <div class="num">02</div>
+        <div class="titles"><h3>行政复议的审理期限</h3><p class="ess">一般六十日内作出决定，可依法延长。</p></div>
+        <button class="expand" data-card="c02" type="button">⛶</button>
+      </div>
+      <div class="full">
+        <span class="part-mark">① 含义</span>
+        <p>行政复议机关应当自受理申请之日起<b>六十日</b>内作出行政复议决定；但是法律规定的行政复议期限少于六十日的除外。</p>
+        <span class="part-mark">② 特征</span>
+        <p>情况复杂，不能在规定期限内作出决定的，经行政复议机构负责人批准，可以适当延长，并告知当事人；但是延长期限最多不得超过<b>三十日</b>。</p>
+        <span class="part-mark">③ 方法论</span>
+        <p>先写“受理之日起”，再写六十日，最后写延长条件与三十日上限。</p>
+      </div>
+      <div class="keys-view">
+        <div class="kpart"><div class="kpart-h">① 含义</div><div class="kchips"><button class="kchip">六十日</button></div></div>
+        <div class="kpart"><div class="kpart-h">② 特征</div><div class="kchips"><button class="kchip">三十日</button><button class="kchip">负责人批准</button></div></div>
+        <div class="kpart"><div class="kpart-h">③ 方法论</div><div class="kchips"><button class="kchip">受理之日</button></div></div>
+      </div>
+      <div class="kw"><span>受理之日</span><span>六十日</span><span>延长</span><span>三十日</span></div>
+    </article>
+  </div>
+</main>
+
+<div class="reader" id="reader" hidden>
+  <div class="reader-shell">
+    <div class="reader-head">
+      <h2 id="rTitle"></h2>
+      <div class="reader-tools">
+        <button id="fsBtn" type="button">网页全屏</button>
+        <button id="minus" type="button">A−</button>
+        <button id="plus" type="button">A+</button>
+        <button id="close" type="button">关闭</button>
+      </div>
+    </div>
+    <div class="reader-scroll" id="rBody"></div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const body = document.body;
+  const cards = [...document.querySelectorAll('.card')];
+  const modes = [...document.querySelectorAll('.seg button')];
+  const count = document.getElementById('count');
+  let mode = 'read', seen = new Set();
+
+  function setMode(m) {
+    mode = m;
+    body.classList.toggle('brief', m === 'brief');
+    body.classList.toggle('blank', m === 'blank');
+    body.classList.toggle('keys', m === 'keys');
+    body.classList.toggle('quiz', m === 'quiz');
+    modes.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === m)));
+    document.querySelectorAll('.revealed').forEach(el => el.classList.remove('revealed'));
+    seen.clear();
+    count.textContent = m === 'quiz' ? '已看 0/' + cards.length : '';
+  }
+  modes.forEach(b => b.addEventListener('click', () => setMode(b.dataset.mode)));
+
+  document.addEventListener('click', e => {
+    const chip = e.target.closest('.kchip');
+    if (chip && mode === 'keys') { chip.classList.toggle('revealed'); return; }
+    const blank = e.target.closest('.full b');
+    if (blank && mode === 'blank') { blank.classList.toggle('revealed'); return; }
+  });
+
+  cards.forEach((card, i) => card.addEventListener('click', e => {
+    if (mode !== 'quiz' || e.target.closest('button,summary,a')) return;
+    card.classList.toggle('revealed');
+    if (card.classList.contains('revealed')) seen.add(i); else seen.delete(i);
+    count.textContent = '已看 ' + seen.size + '/' + cards.length;
+  }));
+
+  document.getElementById('theme').addEventListener('click', () => {
+    const dark = document.documentElement.classList.toggle('dark');
+    document.getElementById('theme').textContent = dark ? '浅色' : '暗色';
+  });
+
+  const reader = document.getElementById('reader');
+  const rBody = document.getElementById('rBody');
+  const rTitle = document.getElementById('rTitle');
+  let fs = 18;
+  function setFs(n) { fs = Math.max(14, Math.min(30, n)); rBody.style.setProperty('--fs', fs + 'px'); }
+  document.querySelectorAll('.expand').forEach(btn => btn.addEventListener('click', e => {
+    e.stopPropagation();
+    const card = document.getElementById(btn.dataset.card);
+    rTitle.textContent = card.querySelector('h3').textContent;
+    rBody.innerHTML = card.querySelector('.full').innerHTML;
+    reader.hidden = false;
+    body.style.overflow = 'hidden';
+    setFs(fs);
+  }));
+  document.getElementById('close').addEventListener('click', () => {
+    reader.hidden = true;
+    body.style.overflow = '';
+    if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+  });
+  document.getElementById('plus').addEventListener('click', () => setFs(fs + 1));
+  document.getElementById('minus').addEventListener('click', () => setFs(fs - 1));
+  document.getElementById('fsBtn').addEventListener('click', async () => {
+    try {
+      if (document.fullscreenElement) await document.exitFullscreen();
+      else await document.documentElement.requestFullscreen();
+    } catch (e) { alert('当前浏览器不支持网页全屏，请用 Chrome/Edge。'); }
+  });
+  document.addEventListener('fullscreenchange', () => body.classList.toggle('fs', !!document.fullscreenElement));
+})();
+</script>
+</body>
+</html>
